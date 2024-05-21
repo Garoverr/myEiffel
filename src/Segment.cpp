@@ -38,13 +38,33 @@ Segment::~Segment()
 sf::Vector2f Segment::getStart() const
 {
     return (sf::Vector2f(_xStart, _yStart));
-
 }
 
 
 sf::Vector2f Segment::getEnd() const
 {
     return (sf::Vector2f(_xEnd, _yEnd));
+}
+
+
+float Segment::getXStart() const
+{
+    return (_xStart);
+}   
+
+float Segment::getYStart() const
+{
+    return (_yStart);
+}
+
+float Segment::getXEnd() const
+{
+    return (_xEnd);
+}
+
+float Segment::getYEnd() const
+{
+    return (_yEnd);
 }
 
 
@@ -74,7 +94,7 @@ void Segment::drawSeg(sf::RenderWindow &win)
     line[1].position = segEnd;
     line[0].color = segColor;
     line[1].color = segColor;
-    
+
     win.draw(line);
 }
 

@@ -131,6 +131,10 @@ int main(void)
 
     seg3.rotate90();
 
+    Eiffel newEiff(seg1);
+
+    newEiff.createCross();
+
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -139,10 +143,12 @@ int main(void)
         }
 
         window.clear(sf::Color::White);
-        seg1.drawSeg(window);
-        seg2.drawSeg(window);
-        seg3.drawSeg(window);
-        seg4.drawSeg(window);
+        newEiff._segPrincipal.drawSeg(window);
+        newEiff._segPrinPerpendicular.drawSeg(window);
+        // seg1.drawSeg(window);
+        // seg2.drawSeg(window);
+        // seg3.drawSeg(window);
+        // seg4.drawSeg(window);
         // myDrawer(window);
         window.display();
     }

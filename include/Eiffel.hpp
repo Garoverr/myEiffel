@@ -11,19 +11,24 @@
 #include <vector>
 class Eiffel {
     public:
-        Eiffel();
+        Eiffel(Segment initSeg);
         ~Eiffel();
 
+
+        void createCross();
         
         float getIntersectNB() const;
         std::vector<float> getIntersectionsArr() const;
         float getSegSize() const;
 
         // taille d'une intersection
-        float getIntersectSize() const {return (_segmentSize / _nbIntersections);}
+        float getIntersectSize() const;
+
+        Segment _segPrincipal;
+        Segment _segPrinPerpendicular;
+
 
     private:
-        // Segment _segX;
         // Segment _segY;
 
         int _nbIntersections;

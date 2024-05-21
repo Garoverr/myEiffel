@@ -19,6 +19,12 @@ class Segment {
         sf::Vector2f getStart() const;
         sf::Vector2f getEnd() const;
 
+        float getXStart() const;
+        float getYStart() const;
+        float getXEnd() const;
+        float getYEnd() const;
+
+
         void drawSeg(sf::RenderWindow &win);
         void rotate90();
 
