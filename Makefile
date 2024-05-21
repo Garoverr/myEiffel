@@ -5,8 +5,9 @@
 ## Makefile
 ##
 
-SRC			=	main.cpp										\
-				src/Eiffel.cpp										\
+SRC			=	main.cpp								\
+				src/Eiffel.cpp							\
+				src/Segment.cpp							\
 
 SFML_FLAGS	=	-lsfml-graphics -lsfml-window -lsfml-system
 

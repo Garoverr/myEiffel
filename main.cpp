@@ -6,6 +6,7 @@
 */
 
 #include "include/Eiffel.hpp"
+#include "include/Segment.hpp"
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/PrimitiveType.hpp>
@@ -16,11 +17,12 @@
 #include <SFML/Window.hpp>
 #include <iostream>
 
-void myDrawer(sf::RenderWindow &window, Eiffel eif)
+void myDrawer(sf::RenderWindow &window)
 {
 
     sf::Vector2f newLineStart(533.333, 300.f);
     sf::Vector2f newLineEnd(400.f, 433.333);
+    Segment seg1(newLineStart, newLineEnd);
 
 
     sf::Vector2f newLineStart1(600.f, 300.f);
@@ -110,9 +112,25 @@ void myDrawer(sf::RenderWindow &window, Eiffel eif)
 int main(void)
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Cross with Circles");
-
-    Eiffel lilEiffel(sf::Vector2f(200, 300), sf::Vector2f(600, 300));
     
+    sf::Vector2f horizontalStart(200.f, 300.f);
+    sf::Vector2f horizontalEnd(600.f, 300.f);
+
+    sf::Vector2f verticalStart(400.f, 100.f);
+    sf::Vector2f verticalEnd(400.f, 500.f);
+
+    Segment seg1(horizontalStart, horizontalEnd);
+
+    Segment seg2(verticalStart, verticalEnd);
+
+    Segment seg3(533.333, 300.f, 400.f, 433.333);
+
+    seg3.rotate90();
+
+    Segment seg4 = seg3;
+
+    seg3.rotate90();
+
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -121,7 +139,11 @@ int main(void)
         }
 
         window.clear(sf::Color::White);
-        myDrawer(window, lilEiffel);
+        seg1.drawSeg(window);
+        seg2.drawSeg(window);
+        seg3.drawSeg(window);
+        seg4.drawSeg(window);
+        // myDrawer(window);
         window.display();
     }
 
