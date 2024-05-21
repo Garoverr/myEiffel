@@ -13,6 +13,7 @@
 class Segment {
     public:
         Segment(sf::Vector2f start, sf::Vector2f end);
+        Segment(Segment &other);
         Segment(float xS, float yS, float xE, float yE);
         ~Segment();
 

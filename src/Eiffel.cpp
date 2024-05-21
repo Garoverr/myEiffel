@@ -22,20 +22,11 @@ Eiffel::~Eiffel()
 
 void Eiffel::createCross()
 {
-    float centerX = (_segPrincipal.getXStart() + _segPrincipal.getXEnd()) / 2;
-    float centerY = (_segPrincipal.getYStart() + _segPrincipal.getYEnd()) / 2;
-
-    float dx = (_segPrincipal.getXEnd() - _segPrincipal.getXStart()) / 2;
-    float dy = (_segPrincipal.getYEnd() - _segPrincipal.getYEnd()) / 2;
-
-    float perpStartX = centerX - dy;
-    float perpStartY = centerY + dx;
-    float perpEndX = centerX + dy;
-    float perpEndY = centerY - dx;
-
-    Segment newSeg(perpStartX, perpStartY, perpEndX, perpEndY);
-
-    _segPrinPerpendicular = newSeg;
+    Segment temp(_segPrincipal);
+    
+    _segPrincipal.rotate90();
+    _segPrinPerpendicular = _segPrincipal;
+    _segPrincipal = temp;
 }
 
 float Eiffel::getIntersectSize() const

@@ -29,6 +29,15 @@ Segment::Segment(float xS, float yS, float xE, float yE)
     _yEnd = yE;
 }
 
+Segment::Segment(Segment &other)
+{
+    _xStart = other._xStart;
+    _yStart = other._yStart;
+    _xEnd = other._xEnd;
+    _yEnd = other._yEnd;
+    
+}
+
 
 Segment::~Segment()
 {

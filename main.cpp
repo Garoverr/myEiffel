@@ -125,15 +125,15 @@ int main(void)
 
     Segment seg3(533.333, 300.f, 400.f, 433.333);
 
+    Segment sex(400.21, 189.21, 200, 450);
+
     seg3.rotate90();
 
     Segment seg4 = seg3;
 
     seg3.rotate90();
 
-    Eiffel newEiff(seg1, window);
-    Eiffel newEiff2(seg3, window);
-    Eiffel newEiff3(seg4, window);
+    Eiffel newEiff(sex, window);
 
 
     while (window.isOpen()) {
@@ -144,12 +144,8 @@ int main(void)
         }
 
         window.clear(sf::Color::White);
-        newEiff.drawCross();
         newEiff.createIntersectionsForCross(7);
-        newEiff2.drawCross();
-        newEiff2.createIntersectionsForCross(7);
-        newEiff3.drawCross();
-        newEiff3.createIntersectionsForCross(7);
+        newEiff.drawCross();
         // seg1.drawSeg(window);
         // seg2.drawSeg(window);
         // seg3.drawSeg(window);
