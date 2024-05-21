@@ -6,6 +6,7 @@
 ##
 
 SRC			=	main.cpp										\
+				src/Eiffel.cpp										\
 
 SFML_FLAGS	=	-lsfml-graphics -lsfml-window -lsfml-system
 
