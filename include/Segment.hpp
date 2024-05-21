@@ -31,6 +31,9 @@ class Segment {
 
         Segment& operator=(const Segment &other);
 
+        bool isNull() const;
+        bool operator==(const Segment &other);
+
     private:
         float _xStart;
         float _yStart;

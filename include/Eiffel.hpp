@@ -7,6 +7,7 @@
 
 #pragma once
 #include "Segment.hpp"
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 class Eiffel {
@@ -23,6 +24,8 @@ class Eiffel {
 
         // taille d'une intersection
         float getIntersectSize() const;
+
+        void drawCross(sf::RenderWindow &win);
 
         Segment _segPrincipal;
         Segment _segPrinPerpendicular;

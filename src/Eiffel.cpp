@@ -6,6 +6,8 @@
 */
 
 #include "../include/Eiffel.hpp"
+#include <iostream>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 
 Eiffel::Eiffel(Segment initSeg) : _segPrincipal(initSeg), _segPrinPerpendicular(0,0,0,0)
@@ -37,4 +39,14 @@ void Eiffel::createCross()
 float Eiffel::getIntersectSize() const
 {
     return (_segmentSize / _nbIntersections);
+}
+
+void Eiffel::drawCross(sf::RenderWindow &win)
+{
+    if (_segPrinPerpendicular.isNull())
+        createCross();
+    else {
+        _segPrincipal.drawSeg(win);
+        _segPrinPerpendicular.drawSeg(win);
+    }
 }

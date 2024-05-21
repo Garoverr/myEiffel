@@ -133,7 +133,6 @@ int main(void)
 
     Eiffel newEiff(seg1);
 
-    newEiff.createCross();
 
     while (window.isOpen()) {
         sf::Event event;
@@ -143,8 +142,7 @@ int main(void)
         }
 
         window.clear(sf::Color::White);
-        newEiff._segPrincipal.drawSeg(window);
-        newEiff._segPrinPerpendicular.drawSeg(window);
+        newEiff.drawCross(window);
         // seg1.drawSeg(window);
         // seg2.drawSeg(window);
         // seg3.drawSeg(window);

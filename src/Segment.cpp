@@ -81,6 +81,18 @@ Segment &Segment::operator=(const Segment &other)
 }
 
 
+bool Segment::operator==(const Segment &other)
+{
+    return (_xStart == other._xStart && _yStart == other._yStart &&
+            _xEnd == other._xEnd && _yEnd == other._yEnd);
+}
+
+
+bool Segment::isNull() const
+{
+    return (_xStart == 0 && _yStart == 0 && _xEnd == 0 && _yEnd == 0);
+}
+
 void Segment::drawSeg(sf::RenderWindow &win)
 {
     sf::VertexArray line(sf::LinesStrip, 2);
