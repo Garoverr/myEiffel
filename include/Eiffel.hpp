@@ -18,7 +18,10 @@ class Eiffel {
 
         void createCross();
         void createIntersections(int nbIntersects);
+        void createIntersections(int nbIntersects, Segment &seg);
+
         void createIntersectionsForCross(int nbIntersects);
+        void createInterCross(int nbIntersects);
 
         
         float getIntersectNB() const;
@@ -28,6 +31,8 @@ class Eiffel {
         float getIntersectSize() const;
 
         void drawCross();
+
+        void drawEiffel();
 
         Segment _segPrincipal;
         Segment _segPrinPerpendicular;

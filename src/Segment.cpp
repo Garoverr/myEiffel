@@ -10,6 +10,7 @@
 #include <SFML/Graphics/PrimitiveType.hpp>
 #include <SFML/Graphics/VertexArray.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <vector>
 
 Segment::Segment(sf::Vector2f start, sf::Vector2f end)
 {
@@ -140,4 +141,15 @@ void Segment::rotate90()
     _yStart = rotatedStartY + centerY;
     _xEnd = rotatedEndX + centerX;
     _yEnd = rotatedEndY + centerY;
+}
+
+
+std::vector<sf::Vector2f> Segment::getIntersectionsArr() const
+{
+    return (_intersectionPoints);
+}
+
+void Segment::setIntersectionsArr(std::vector<sf::Vector2f> points)
+{
+    _intersectionPoints = points;
 }
