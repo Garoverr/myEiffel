@@ -131,7 +131,9 @@ int main(void)
 
     seg3.rotate90();
 
-    Eiffel newEiff(seg1);
+    Eiffel newEiff(seg1, window);
+    Eiffel newEiff2(seg3, window);
+    Eiffel newEiff3(seg4, window);
 
 
     while (window.isOpen()) {
@@ -142,7 +144,12 @@ int main(void)
         }
 
         window.clear(sf::Color::White);
-        newEiff.drawCross(window);
+        newEiff.drawCross();
+        newEiff.createIntersectionsForCross(7);
+        newEiff2.drawCross();
+        newEiff2.createIntersectionsForCross(7);
+        newEiff3.drawCross();
+        newEiff3.createIntersectionsForCross(7);
         // seg1.drawSeg(window);
         // seg2.drawSeg(window);
         // seg3.drawSeg(window);

@@ -12,28 +12,29 @@
 #include <vector>
 class Eiffel {
     public:
-        Eiffel(Segment initSeg);
+        Eiffel(Segment initSeg, sf::RenderWindow &win);
         ~Eiffel();
 
 
         void createCross();
+        void createIntersections(int nbIntersects);
+        void createIntersectionsForCross(int nbIntersects);
+
         
         float getIntersectNB() const;
         std::vector<float> getIntersectionsArr() const;
         float getSegSize() const;
 
-        // taille d'une intersection
         float getIntersectSize() const;
 
-        void drawCross(sf::RenderWindow &win);
+        void drawCross();
 
         Segment _segPrincipal;
         Segment _segPrinPerpendicular;
 
 
     private:
-        // Segment _segY;
-
+        sf::RenderWindow & _win;
         int _nbIntersections;
         std::vector<float> _intersections;
 
