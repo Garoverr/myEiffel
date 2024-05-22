@@ -122,34 +122,34 @@ void Eiffel::createIntersectionsForCross(int nbIntersects)
 
         intersectionCircleX.setFillColor(sf::Color::Black);
         intersectionCircleX.setPosition(xX - intersectionCircleX.getRadius(), yX - intersectionCircleX.getRadius());
-        _win.draw(intersectionCircleX);
+        // _win.draw(intersectionCircleX);
 
         intersectionCircleY.setFillColor(sf::Color::Black);
         intersectionCircleY.setPosition(xY - intersectionCircleX.getRadius(), yY - intersectionCircleX.getRadius());
-        _win.draw(intersectionCircleY);
+        // _win.draw(intersectionCircleY);
 
     }
 
     sf::CircleShape startCircleX(4.f);
     startCircleX.setFillColor(sf::Color::Black);
     startCircleX.setPosition(_segPrincipal.getXStart() - startCircleX.getRadius(), _segPrincipal.getYStart() - startCircleX.getRadius());
-    _win.draw(startCircleX);
+    // _win.draw(startCircleX);
     
     sf::CircleShape endCircleX(4.f);
     endCircleX.setFillColor(sf::Color::Black);
     endCircleX.setPosition(_segPrincipal.getXEnd() - endCircleX.getRadius(), _segPrincipal.getYEnd() - endCircleX.getRadius());
-    _win.draw(endCircleX);
+    // _win.draw(endCircleX);
 
 
     sf::CircleShape startCircleY(4.f);
     startCircleY.setFillColor(sf::Color::Black);
     startCircleY.setPosition(_segPrinPerpendicular.getXStart() - startCircleY.getRadius(), _segPrinPerpendicular.getYStart() - startCircleY.getRadius());
-    _win.draw(startCircleY);
+    // _win.draw(startCircleY);
     
     sf::CircleShape endCircleY(4.f);
     endCircleY.setFillColor(sf::Color::Black);
     endCircleY.setPosition(_segPrinPerpendicular.getXEnd() - endCircleY.getRadius(), _segPrinPerpendicular.getYEnd() - endCircleY.getRadius());
-    _win.draw(endCircleY);
+    // _win.draw(endCircleY);
 }
 
 
@@ -189,7 +189,7 @@ void Eiffel::drawEiffel()
 
     int numConnections = std::min(segPrinIts.size(), segPerpIts.size() / 2); // Nombre de connexions possibles
 
-    for (int i = 0; i < numConnections - 2; ++i) {
+    for (int i = 0; i < numConnections; ++i) {
         // Point d'extrémité du segment principal
         sf::Vector2f pointA = segPrinIts[i];
 
